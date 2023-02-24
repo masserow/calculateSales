@@ -8,24 +8,28 @@ public class StatsServiceTest {
     @Test
     public void shouldFindSumAllSales() {
         StatsService service = new StatsService();
+        //int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
+        int count = 8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18;
 
-        int expectedSum = 180;
-        int actualSum = service.sumAllSales();
+        int expected = 180;
+        int actual = service.sumAllSales(count);
 
-        Assertions.assertEquals(expectedSum, actualSum);
+        Assertions.assertEquals(expected, actual);
     }
 
 
     @Test
     public void shouldFindMiddleSumAllSales() {
         StatsService service = new StatsService();
+        //int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
+        int count = (8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18) / 12;
 
-        int expectedSum = 15;
-        int actualSum = service.middleSumAllSales();
+        int expected = 15;
+        int actual = service.middleSumAllSales(count);
 
-        Assertions.assertEquals(expectedSum, actualSum);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -59,8 +63,10 @@ public class StatsServiceTest {
 
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
+        int middleSum = (8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18) / 12;
+
         int expectedMonths = 5;
-        int actualMonths = service.monthsSalesUnderMiddle(sales);
+        int actualMonths = service.monthsSalesUnderMiddle(sales, middleSum);
 
         Assertions.assertEquals(expectedMonths, actualMonths);
     }
@@ -72,8 +78,10 @@ public class StatsServiceTest {
 
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
+        int middleSum = (8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18) / 12;
+
         int expectedMonths = 5;
-        int actualMonths = service.monthsSalesOverMiddle(sales);
+        int actualMonths = service.monthsSalesOverMiddle(sales, middleSum);
 
         Assertions.assertEquals(expectedMonths, actualMonths);
     }

@@ -2,17 +2,17 @@ package ru.netology.stats.calculateSales.services;
 
 public class StatsService {
 
-    public int sumAllSales() {
+    public int sumAllSales(int count) {
         int sum;
-        sum = 8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18;
+        sum = count;
 
         return sum;
     }
 
 
-    public int middleSumAllSales() {
+    public int middleSumAllSales(int count) {
         int middleSum;
-        middleSum = (8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18) / 12;
+        middleSum = count;
 
         return middleSum;
     }
@@ -44,9 +44,8 @@ public class StatsService {
     }
 
 
-    public int monthsSalesUnderMiddle(int[] sales) {
+    public int monthsSalesUnderMiddle(int[] sales, int middleSum) {
         int monthsUnderMiddle = 0; //счетчик месяцев продаж ниже среднего
-        int middleSum = (8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18) / 12;
 
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < middleSum) {
@@ -58,9 +57,8 @@ public class StatsService {
     }
 
 
-    public int monthsSalesOverMiddle(int[] sales) {
+    public int monthsSalesOverMiddle(int[] sales, int middleSum) {
         int monthsOverMiddle = 0; //счетчик месяцев продаж выше среднего
-        int middleSum = (8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18) / 12;
 
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > middleSum) {
