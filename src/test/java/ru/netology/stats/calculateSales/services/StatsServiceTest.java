@@ -48,7 +48,7 @@ public class StatsServiceTest {
     public void shouldFindMinSalesMonth() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int[] sales = {7, 7, 7, 7, 7, 7, 7, 7, 7, 14, 14, 18};
 
         int expectedMonth = 9;
         int actualMonth = service.minSales(sales);
